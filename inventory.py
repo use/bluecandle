@@ -13,11 +13,13 @@ character_inventories = {
 
 class Inventory:
 
-    def __init__(self, character):
+    def __init__(self, character, asc):
         if character not in character_inventories:
             print("Character not supported: " + character)
         self.deck = character_inventories[character]['deck'].copy()
         self.relics = character_inventories[character]['relics'].copy()
+        if asc >= 10:
+            self.add_card("AscendersBane")
 
     def add_relic(self, item):
         self.relics.append(item)
