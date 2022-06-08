@@ -6,7 +6,8 @@ def compare_lists(a, b):
     return {
         'a-b': a_minus_b,
         'b-a': b_minus_a,
-        'diff_ratio': (len(a_minus_b) + len(b_minus_a)) / ((len(a) + len(b)))
+        'diff_ratio': (len(a_minus_b) + len(b_minus_a)) / ((len(a) + len(b))),
+        'jaccard': len(a.intersection(b)) / len(a.union(b))
     }
 
 def numberize_duplicates(l):
