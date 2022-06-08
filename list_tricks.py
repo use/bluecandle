@@ -1,9 +1,12 @@
 def compare_lists(a, b):
     a = set(numberize_duplicates(sorted(a)))
     b = set(numberize_duplicates(sorted(b)))
+    a_minus_b = sorted(list(a - b))
+    b_minus_a = sorted(list(b - a))
     return {
-        'a-b': sorted(list(a - b)),
-        'b-a': sorted(list(b - a)),
+        'a-b': a_minus_b,
+        'b-a': b_minus_a,
+        'diff_ratio': (len(a_minus_b) + len(b_minus_a)) / ((len(a) + len(b)))
     }
 
 def numberize_duplicates(l):
